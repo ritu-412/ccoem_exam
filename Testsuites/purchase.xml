@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite  name="Suite">
+<listeners>
+<listener class-name="tech_panda.testcomponents.Listeners" />
+</listeners>
+
+  <test thread-count="5" name="Purchase order test">
+
+	 <classes>
+            <!-- Specify the class containing the test methods -->
+            <class name="tech_panda.tests.ErrorValidationTest">
+                <methods>
+                    <!-- Include only the specific method you want to execute -->
+                    <include name="AddTocartTest" />
+                    <include name="EmptyCartTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
