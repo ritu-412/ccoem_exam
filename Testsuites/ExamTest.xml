@@ -7,7 +7,9 @@
 
   <test thread-count="5" name="Exam Page test">
     <classes>
+   		 <class name="ccoem_admin1.tests.QuestionsCSVPageTest"/>
 		 <class name="ccoem_admin1.tests.ExamsPageTest"/>
+		  
 	 </classes>
     </test>
  

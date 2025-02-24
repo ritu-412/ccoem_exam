@@ -55,7 +55,7 @@ public class AssignExamPageTest extends BaseTest {
 		String actualmsg = assignexampage.getSuccessMessage();
 		String exptedmsg = "Exam assigned successfully";
 		Assert.assertEquals(actualmsg, exptedmsg, "Success message does not match");
-		
+		Thread.sleep(2000);
 		//assignexampage.changeStatus();
 	}
 

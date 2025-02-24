@@ -11,6 +11,7 @@
           <include name="setUp"/>
           <include name="addExamTest"/>
           <include name="closeBrowser"/>
+          <include name="addQuestionTest"/>
         </methods>
       </class> <!-- ccoem_admin1.tests.ExamsPageTest -->
     </classes>

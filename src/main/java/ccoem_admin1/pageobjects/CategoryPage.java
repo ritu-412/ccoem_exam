@@ -3,6 +3,7 @@ package ccoem_admin1.pageobjects;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -121,7 +122,8 @@ public class CategoryPage extends AbstractMethods{
 		Thread.sleep(1000);
 		
 		edt_catdesc.sendKeys(Keys.CONTROL + "a");
-		edt_catdesc.sendKeys(Keys.BACK_SPACE);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value = '';", edt_catdesc);
 		edt_catdesc.sendKeys(catdesc);
 		edit_submitbtn.click();
 
@@ -138,6 +140,24 @@ public class CategoryPage extends AbstractMethods{
 		return new SubcategoryPage(driver);
 
 	}
+	
+	
+	public String getSuccessMessage() throws InterruptedException {
+
+
+
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+
+		// Use explicit wait to wait for the visibility of the element
+		WebElement toastMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(
+				By.cssSelector("div.Toastify__toast-body > div:last-child") 
+				));
+
+
+		System.out.println("Toast message displayed: " + toastMessage.getText());
+		return  toastMessage.getText();
+	}
+	
 
 
 

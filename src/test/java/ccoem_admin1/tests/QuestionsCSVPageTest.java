@@ -20,48 +20,34 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import ccoem_admin1.pageobjects.CategoryPage;
 import ccoem_admin1.pageobjects.DashboardPage;
+import ccoem_admin1.pageobjects.ExamsPage;
 import ccoem_admin1.pageobjects.LandingPage;
 import ccoem_admin1.pageobjects.LoginPage;
+import ccoem_admin1.pageobjects.QuestionsPage;
 import ccoem_admin1.testcomponents.BaseTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import run_browserstack.New_Base_Config1;
 
-public class DashboardPageTest extends BaseTest {
-
-	DashboardPage dashboardpage;
-
-	@Test
-	public void editProfile() throws InterruptedException {
-	
-		
-		System.out.println("test dashboard");
-		//landingpage = new LandingPage(driver);
-		//
-		//dashboardpage = new DashboardPage(driver);
-		//landingpage.clickToLogin();
-		//lognpage.login();
-		//String fname = "Soumyajit1";
-		//String lname = "Biswas1";
-		
-		
-		//dashboardpage.clickSaveButton();
-	
-		
-		//String expectedMessage = "User updated Successfully";
-       // String actualMessage = dashboardpage.getSuccessMessage();
-       // Assert.assertEquals(actualMessage, expectedMessage, "Profile update success message does not match!");
-
-	}
+public class QuestionsCSVPageTest extends BaseTest {
 
 
 	@Test
-	public void redirectPage() throws InterruptedException {
-		//String url = "Categories";
-		//dashboardpage.catMenuRedirect(); 
+	public void Verifyquestions() throws InterruptedException {
 	
+		String email = properties.getProperty("login_email");
+		String password = properties.getProperty("login_pass");
+		landingpage = new LandingPage(driver);
+		lognpage = new LoginPage(driver);
+		dashboardpage = new DashboardPage(driver);
+		categorypage = new CategoryPage(driver);
+		questionspage = new QuestionsPage(driver);
+		examspage = new ExamsPage(driver);
+		landingpage.clickToLogin();
+		dashboardpage = lognpage.login(email,password);
+		questionspage = dashboardpage.questionMenuRedirect();
+        questionspage.csvAddquesBtn();
 	}
-	
-
 
 }

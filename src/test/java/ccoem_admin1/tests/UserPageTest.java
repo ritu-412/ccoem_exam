@@ -20,41 +20,59 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import ccoem_admin1.models.User;
+import ccoem_admin1.pageobjects.CategoryPage;
 import ccoem_admin1.pageobjects.DashboardPage;
 import ccoem_admin1.pageobjects.LandingPage;
 import ccoem_admin1.pageobjects.LoginPage;
+import ccoem_admin1.pageobjects.UserPage;
 import ccoem_admin1.testcomponents.BaseTest;
+import ccoem_admin1.utils.JsonReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import run_browserstack.New_Base_Config1;
+
 
 public class UserPageTest extends BaseTest {
 
-
-
 	@Test
-	public void editProfile() throws InterruptedException {
-		landingpage = new LandingPage(driver);
-		lognpage = new LoginPage(driver);
-		dashboardpage = new DashboardPage(driver);
-		landingpage.clickToLogin();
-		//lognpage.login();
-		String fname = "Soumyajit11";
-		String lname = "Biswas";
-		
-		//dashboardpage.enterEditDetails(fname, lname);
-		//dashboardpage.clickSaveButton();
-	
-		
-		String expectedMessage = "User updated Successfully";
-       // String actualMessage = dashboardpage.getSuccessMessage();
-       // Assert.assertEquals(actualMessage, expectedMessage, "Profile update success message does not match!");
+	public void AddUserProfile() throws InterruptedException {
+	    
+	    List<User> users = JsonReader.getUsers("src/test/java/ccoem_admin1/testdata/UserData.json");
 
-	
+	    if (users == null || users.isEmpty()) {
+	        throw new RuntimeException("No users found in JSON file.");
+	    }
+
+	    
+	    String email = properties.getProperty("login_email");
+	    String password = properties.getProperty("login_pass");
+
+	    landingpage = new LandingPage(driver);
+	    lognpage = new LoginPage(driver);
+	    dashboardpage = new DashboardPage(driver);
+	    categorypage = new CategoryPage(driver);
+	    userpage = new UserPage(driver);
+
+	    landingpage.clickToLogin();
+	    dashboardpage = lognpage.login(email, password);
+	    userpage = dashboardpage.userMenuRedirect();
+
+	    // Iterate through all users in the JSON
+	    for (User testUser : users) {
+	        userpage.VerifyUserAdd(
+	            testUser.getFname(),
+	            testUser.getLname(),
+	            testUser.getEmail(),
+	            testUser.getPhone(),
+	            testUser.getPassword(),
+	            testUser.getRole()
+	        );
+
+	        String actualmsg = userpage.getSuccessMessage();
+	        String expectedmsg = "User created Successfully";
+	        Assert.assertEquals(actualmsg, expectedmsg, "Add User success message does not match");
+
+	        Thread.sleep(2000); // Adding delay to allow processing before the next user is added
+	    }
 	}
-
-
-
-	
-
 
 }

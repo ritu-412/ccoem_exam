@@ -76,11 +76,14 @@ public class AssignExamPage extends AbstractMethods{
 
 	@FindBy(xpath="//button[@type='submit']")
 	WebElement submit_btn;
+	
+	@FindBy(xpath="//form[@class='modalForm']")
+	WebElement form;
 
     
 	//div[div[text()='Jagriti Sethia']]/following-sibling::div//input[@id='statusSwitch']
 	
-	@FindBy(xpath="//div[div[text()='Jagriti Sethia']]/following-sibling::div//input[@id='statusSwitch']")
+	@FindBy(xpath="//div[div[text()='test demo']]/following-sibling::div//input[@id='statusSwitch']")
 	WebElement status_btn;
 	
 
@@ -102,7 +105,8 @@ public class AssignExamPage extends AbstractMethods{
 		//endtime_picker.click();
 		endtime_picker.sendKeys(currentDate);
 		Thread.sleep(2000);
-		selectUsersUsingActions(Arrays.asList("Jagriti Sethia", "demo1 test1"));
+		//selectUsersUsingActions(Arrays.asList("Jagriti Sethia", "demo1 test1"));
+		selectUsersUsingActions(Arrays.asList("Arkabrata Chandra", "test demo"));
 		//select_user.click();
 		/*Actions a = new Actions(driver);
 		a.sendKeys(select_user_txt,"jagriti").build().perform();
@@ -135,18 +139,11 @@ public class AssignExamPage extends AbstractMethods{
 
 			}
 		}
-		actions.sendKeys(Keys.ESCAPE).perform();
+		//actions.sendKeys(Keys.ESCAPE).perform();
+		form.click();		
 	}
 	
-	public void selectDate(String expectmonth,String expectyr,String expectdt) {
-		
-		
-		
-		
-	}
-
-
-
+	
 	public String getSuccessMessage() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(30));
 		Boolean old_toastMessage = wait.until(ExpectedConditions.invisibilityOfElementLocated(
@@ -162,10 +159,10 @@ public class AssignExamPage extends AbstractMethods{
 		return "No toast message found";
 	}
 	
-	/*public void changeStatus() {
+	/* public void changeStatus() {
 		status_btn.click();
 		
-	}*/
+	} */
 
 
 

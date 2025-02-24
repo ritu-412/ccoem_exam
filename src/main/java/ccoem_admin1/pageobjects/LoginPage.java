@@ -44,7 +44,7 @@ public class LoginPage extends AbstractMethods{
 	
 	public DashboardPage login(String uemail, String password) throws InterruptedException {
 		
-	
+	   Thread.sleep(3000);
 		email.sendKeys(uemail);
 		pass.sendKeys(password);
 		submitbtn.click();

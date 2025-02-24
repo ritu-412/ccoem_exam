@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">CC OEM Exam Portal Test Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb 6, 2025 04:49:55 pm</span></a>
+<a href="#"><span class="badge badge-primary">Feb 11, 2025 06:05:24 pm</span></a>
 </li>
 </ul>
 </div>
@@ -80,40 +80,107 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">addQuestionTest</p>
             <p class="text-sm">
-              <span>4:49:56 pm</span> / <span>00:00:10:013</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>6:05:25 pm</span> / <span>00:01:10:738</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">addQuestionTest</h5>
-<span class='badge badge-success'>02.06.2025 4:49:56 pm</span>
-<span class='badge badge-danger'>02.06.2025 4:50:06 pm</span>
-<span class='badge badge-default'>00:00:10:013</span>
+<h5 class="test-status text-fail">addQuestionTest</h5>
+<span class='badge badge-success'>02.11.2025 6:05:25 pm</span>
+<span class='badge badge-danger'>02.11.2025 6:06:35 pm</span>
+<span class='badge badge-default'>00:01:10:738</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
 <span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\CODECLOUDS-RITUPARNA\eclipse-workspace2\ccoem_admin1//reports//addQuestionTest.png' src="C:\Users\CODECLOUDS-RITUPARNA\eclipse-workspace2\ccoem_admin1//reports//addQuestionTest.png">
+  
+    <div class="title">addQuestionTest</div>
+
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:50:06 pm</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>6:06:35 pm</td>
         <td>
-          ✅ Test Passed
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='close-modal']"}
+  (Session info: chrome=133.0.6943.59)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8cea1b31a25c04c8344b30295f754b11, findElement {value=//div[@id='close-modal'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.59, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Users\CODECL~2\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51090}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51090/devtoo..., se:cdpVersion: 133.0.6943.59, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cea1b31a25c04c8344b30295f754b11
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
+	at ccoem_admin1.pageobjects.QuestionsPage.clickAddquesBtn(QuestionsPage.java:142)
+	at ccoem_admin1.tests.ExamsPageTest.addQuestionTest(ExamsPageTest.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -128,7 +195,7 @@
           <div class="test-detail">
             <p class="name">addExamTest</p>
             <p class="text-sm">
-              <span>4:50:06 pm</span> / <span>00:00:11:263</span>
+              <span>6:06:35 pm</span> / <span>00:00:09:672</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -137,9 +204,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">addExamTest</h5>
-<span class='badge badge-success'>02.06.2025 4:50:06 pm</span>
-<span class='badge badge-danger'>02.06.2025 4:50:17 pm</span>
-<span class='badge badge-default'>00:00:11:263</span>
+<span class='badge badge-success'>02.11.2025 6:06:35 pm</span>
+<span class='badge badge-danger'>02.11.2025 6:06:45 pm</span>
+<span class='badge badge-default'>00:00:09:672</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -160,7 +227,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>4:50:17 pm</td>
+        <td>6:06:45 pm</td>
         <td>
           <textarea readonly class="code-block">java.lang.AssertionError: The exam success message does not match expected [Exam created successfully] but found [Exam Enlisted Successfully]
 	at org.testng.Assert.fail(Assert.java:111)
@@ -168,7 +235,7 @@
 	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 	at org.testng.Assert.assertEquals(Assert.java:132)
 	at org.testng.Assert.assertEquals(Assert.java:656)
-	at ccoem_admin1.tests.ExamsPageTest.addExamTest(ExamsPageTest.java:64)
+	at ccoem_admin1.tests.ExamsPageTest.addExamTest(ExamsPageTest.java:62)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -213,7 +280,7 @@
           <div class="test-detail">
             <p class="name">examListTest</p>
             <p class="text-sm">
-              <span>4:50:17 pm</span> / <span>00:00:02:135</span>
+              <span>6:06:45 pm</span> / <span>00:00:02:100</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -222,9 +289,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">examListTest</h5>
-<span class='badge badge-success'>02.06.2025 4:50:17 pm</span>
-<span class='badge badge-danger'>02.06.2025 4:50:19 pm</span>
-<span class='badge badge-default'>00:00:02:135</span>
+<span class='badge badge-success'>02.11.2025 6:06:45 pm</span>
+<span class='badge badge-danger'>02.11.2025 6:06:47 pm</span>
+<span class='badge badge-default'>00:00:02:100</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
 <span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
@@ -237,9 +304,9 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>4:50:19 pm</td>
+        <td>6:06:47 pm</td>
         <td>
-          ✅ Test Passed
+          Test Passed
         </td>
       </tr>
   </tbody>
@@ -260,7 +327,7 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
@@ -288,9 +355,42 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:50:06 pm</td>
+<td>18:06:35 pm</td>
 <td>
 <a href="#" class="linked" test-id='2' id='2'>addExamTest</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>18:05:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>addQuestionTest</a>
 </td>
 </tr>
 </tbody>
@@ -310,25 +410,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb 6, 2025 04:49:55 pm</h3>
+<h3>Feb 11, 2025 06:05:24 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb 6, 2025 04:50:19 pm</h3>
+<h3>Feb 11, 2025 06:06:47 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>2</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>1</h3>
+<h3>2</h3>
 </div></div>
 </div>
 </div>
@@ -344,12 +444,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='66%'>
-<b>2</b> tests passed
+<div><small data-tooltip='33%'>
+<b>1</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='33%'><b>1</b> tests failed,
+<small data-tooltip='66%'><b>2</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -367,9 +467,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='66%'><b>2</b> events passed</small></div>
+<div><small data-tooltip='33%'><b>1</b> events passed</small></div>
 <div>
-<small data-tooltip='33%'><b>1</b> events failed,
+<small data-tooltip='66%'><b>2</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -386,7 +486,7 @@
 </div></div>
 <script>
 var timeline = {
-"addQuestionTest":10.013,"addExamTest":11.263,"examListTest":2.135
+"addQuestionTest":70.738,"addExamTest":9.672,"examListTest":2.1
 };
 </script>
 <div class="row">
@@ -409,8 +509,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 2,
-failParent: 1,
+passParent: 1,
+failParent: 2,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -426,8 +526,8 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 2,
-failEvents: 1,
+passEvents: 1,
+failEvents: 2,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

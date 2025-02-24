@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,10 +64,12 @@ public class EditProfilePage extends AbstractMethods{
 		profile_menu.click();
 		myprofile.click();
 		edit_fname.sendKeys(Keys.CONTROL + "a");
-		edit_fname.sendKeys(Keys.BACK_SPACE);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value = '';", edit_fname);
 		edit_fname.sendKeys(fname);
 		edit_lname.sendKeys(Keys.CONTROL + "a");
-		edit_lname.sendKeys(Keys.BACK_SPACE);
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		js1.executeScript("arguments[0].value = '';", edit_lname);
 		edit_lname.sendKeys(lname);
 	}
 

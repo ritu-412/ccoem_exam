@@ -3,17 +3,18 @@ package ccoem_admin1.pageobjects;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import ccoem_admin1.Abstractmethods.AbstractMethods;
 
 public class UserPage extends AbstractMethods{
-
 
 	WebDriver driver;
 
@@ -24,46 +25,61 @@ public class UserPage extends AbstractMethods{
 
 	}
 
-	@FindBy(xpath="//input[@name='fname']")
-	WebElement edit_fname;
 
-	@FindBy(xpath="//input[@name='lname']")
-	WebElement edit_lname;
+
+	@FindBy(xpath="//div[@id='action-bar-btn']")
+	WebElement add_user;
+
+	@FindBy(xpath="//input[@name='first_name']")
+	WebElement user_fname;
+
+	@FindBy(xpath="//input[@name='last_name']")
+	WebElement user_lname;
+
+	@FindBy(xpath="//input[@name='email_id']")
+	WebElement user_email;
+
+
+	@FindBy(xpath="//input[@name='phone_number']")
+	WebElement user_phno;
+
+	@FindBy(xpath="//input[@name='password']")
+	WebElement user_pass;
+
+
+	@FindBy(xpath="//select[@name='user_role']")
+	WebElement user_role;
 
 
 	@FindBy(xpath="//button[@type='submit']")
-	WebElement edit_submitbtn;
+	WebElement user_submitbtn;
 
-	@FindBy(xpath="//div[@class='profile']")
-	WebElement profile_menu;
-
-
-	@FindBy(xpath="//ul[@class='list-unstyled']/li[1]")
-	WebElement myprofile;
 
 	@FindBy(xpath="//div[@role='alert']//div")
 	WebElement profile_successmsg;
 
-	//ul[@class='list-unstyled']/li[1]
 
 	By edit_success = By.xpath("//div[@role='alert']//div");
 
 
 
-	public void enterEditDetails(String fname,String lname) throws InterruptedException {
+	public void VerifyUserAdd(String fname,String lname,String email, String ph,String pass,String role) throws InterruptedException {
 		Thread.sleep(3000);
-		profile_menu.click();
-		myprofile.click();
-		edit_fname.clear();
-		edit_fname.sendKeys(fname);
-		edit_lname.clear();
+		add_user.click();
+		user_fname.sendKeys(fname);
+		user_lname.sendKeys(lname);
+		user_email.sendKeys(email);
+		user_phno.sendKeys(ph);
+		user_pass.sendKeys(pass);
+		Select srole = new Select(user_role);
+		srole.selectByValue(role);
 
-		//edit_lname.sendKeys(lname);
+		Thread.sleep(3000);
+		user_submitbtn.click();
+
+
 	}
 
-	public void clickSaveButton() {
-		edit_submitbtn.click();
-	}
 
 	public String getSuccessMessage() throws InterruptedException {
 

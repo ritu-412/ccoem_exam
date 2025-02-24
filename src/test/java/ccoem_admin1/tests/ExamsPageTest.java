@@ -46,18 +46,16 @@ public class ExamsPageTest extends BaseTest {
 		categorypage = new CategoryPage(driver);
 		questionspage = new QuestionsPage(driver);
 		examspage = new ExamsPage(driver);
-		landingpage.clickToLogin();
-		dashboardpage = lognpage.login(email,password);
-		questionspage = dashboardpage.questionMenuRedirect();
+		//landingpage.clickToLogin();
+		//dashboardpage = lognpage.login(email,password);
+		//questionspage = dashboardpage.questionMenuRedirect();
 		questionspage.clickAddquesBtn();
-		
-	
+		//questionspage.closeModal();	
 	}
-
-
+	
 	@Test(priority = 2)
 	public void addExamTest() throws InterruptedException {
-	    Thread.sleep(3000);
+	    Thread.sleep(2000);
 	    examspage = questionspage.examMenuRedirect();
 		String actualmsg =  examspage.examAdd();
 		String expectedmsg = "Exam created successfully";

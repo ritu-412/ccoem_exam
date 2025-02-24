@@ -99,31 +99,11 @@ public class DashboardPage extends AbstractMethods{
 
 	} 
 
-	/*	public void leftMenuRedirect(String str) {
-		if(str.equalsIgnoreCase("Categories")) {
-			cat_url.click();
-
-		} else if(str.equalsIgnoreCase("Subcategories")) {
-			subcat_url.click();
-
-		}else if(str.equalsIgnoreCase("Questionnaires")) {
-			questionnaire_url.click();
-
-		}else if(str.equalsIgnoreCase("Exam")) {
-			exam_url.click();
-
-		}else if(str.equalsIgnoreCase("Assignee")) {
-			assign_exam_url.click();
-
-		}else if(str.equalsIgnoreCase("User")) {
-			user_url.click();
-
-		}else if(str.equalsIgnoreCase("Results")) {
-			result_url.click();
-
-		}
-
-	} */
+	public UserPage userMenuRedirect() {
+		user_url.click();
+		return new UserPage(driver);
+		
+	}
 
 
 

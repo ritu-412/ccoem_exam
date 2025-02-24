@@ -98,7 +98,7 @@ public class ExamsPage extends AbstractMethods{
 
 
 	public String examAdd() throws InterruptedException {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		String desiredsubcat = "Selenium";
 		String desiredsubcat1 = "PlayWright";
 		add_exambtn.click();	

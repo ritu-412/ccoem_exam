@@ -31,98 +31,143 @@ public class QuestionsPage extends AbstractMethods{
 	@FindBy(xpath="//button[@type='submit' and contains(text(),'Add Manually')]")
 	WebElement manual_form;
 	
+	@FindBy(xpath="//button[@type='submit' and contains(text(),'Add CSV')]")
+	WebElement csv_form;
+	
+	@FindBy(name="selectedCategory")
+	WebElement csvcat_drpdwn;
+	
+	@FindBy(name="selectedSubCategory")
+	WebElement csvsubcat_drpdwn;
+	
+	@FindBy(xpath="//input[@class='fileUpload' and @accept='.csv']")
+	WebElement csv_upload;
+
 	@FindBy(xpath="(//ul[@id='sidebar-list-icons']/div/li/a)[4]")
 	WebElement exam_url;
 
-	
+
 	@FindBy(id="categories")
 	WebElement cat_dropdown;
-	
+
 	@FindBy(id="subCategories")
 	WebElement subcat_dropdown;
-	
+
 	@FindBy(id="questionField")
 	WebElement qstntxt;
-	
+
 	@FindBy(id="answerA")
 	WebElement txtans_a;
-	
+
 	@FindBy(id="answerB")
 	WebElement txtans_b;
-	
+
 	@FindBy(id="answerC")
 	WebElement txtans_c;
-	
+
 	@FindBy(id="answerD")
 	WebElement txtans_d;
-	
+
 	@FindBy(id="optionA")
 	WebElement optn_a;
-	
+
 	@FindBy(id="optionB")
 	WebElement optn_b;
-	
+
 	@FindBy(id="optionC")
 	WebElement optn_c;
-	
+
 	@FindBy(id="optionD")
 	WebElement optn_d;
-	
+
 	@FindBy(id="difficultylevel")
 	WebElement difficulty_level;
-	
+
 	//div[@id='close-modal']
-	
+
 	@FindBy(xpath="//div[@id='close-modal']")
 	WebElement close_modal;
-	
-	
+
+
 
 	@FindBy(xpath="//button[@type='submit' and contains(text(),'Submit')]")
 	WebElement qstn_submitbtn;
+	
+	//button[@type='submit' and text()='Submit']
+	
+	@FindBy(xpath="//button[@type='submit' and text()='Submit']")
+	WebElement csv_submitbtn;
 
 
 	public void clickAddquesBtn() throws InterruptedException {
 		int i = 1;
 		while(i<3) {
-		add_questionbtn.click();
-		Thread.sleep(1000);
-		manual_form.click();
-		Select cd = new Select(cat_dropdown);
-		cd.selectByVisibleText("Automation Testing");
-		Thread.sleep(2000);
-		if(i==1) {
-		Select sd = new Select(subcat_dropdown);
-		sd.selectByVisibleText("Selenium");
-		qstntxt.sendKeys("How to maximize an window");
-		txtans_a.sendKeys("driver.manage.window.max()");
-		txtans_b.sendKeys("driver.manage.max.window()");
-		txtans_c.sendKeys("driver.manage.maximum.window()");
-		txtans_d.sendKeys("driver.manage.window.maximize()");
-		optn_d.click();
-		Select dl = new Select(difficulty_level);
-		dl.selectByValue("easy");
-		qstn_submitbtn.click();
-		}
-		if(i==2) {
-			Select sd = new Select(subcat_dropdown);
-			sd.selectByVisibleText("PlayWright");
-			qstntxt.sendKeys("Does Playwright require a Webdriver dependency?");
-			txtans_a.sendKeys("Yes");
-			txtans_b.sendKeys("No");
-			txtans_c.sendKeys("May be");
-			txtans_d.sendKeys("Depends on requirements");
-			optn_b.click();
-			Select dl = new Select(difficulty_level);
-			dl.selectByValue("easy");
-			qstn_submitbtn.click();
+			add_questionbtn.click();
+			Thread.sleep(1000);
+			manual_form.click();
+			Select cd = new Select(cat_dropdown);
+			cd.selectByVisibleText("Automation Testing");
+			Thread.sleep(2000);
+			if(i==1) {
+				Select sd = new Select(subcat_dropdown);
+				sd.selectByVisibleText("Selenium");
+				qstntxt.sendKeys("How to maximize an window");
+				txtans_a.sendKeys("driver.manage.window.max()");
+				txtans_b.sendKeys("driver.manage.max.window()");
+				txtans_c.sendKeys("driver.manage.maximum.window()");
+				txtans_d.sendKeys("driver.manage.window.maximize()");
+				optn_d.click();
+				Select dl = new Select(difficulty_level);
+				dl.selectByValue("easy");
+				qstn_submitbtn.click();
 			}
-		
-		close_modal.click();
-		i++;
+			if(i==2) {
+				Select sd = new Select(subcat_dropdown);
+				sd.selectByVisibleText("PlayWright");
+				qstntxt.sendKeys("Does Playwright require a Webdriver dependency?");
+				txtans_a.sendKeys("Yes");
+				txtans_b.sendKeys("No");
+				txtans_c.sendKeys("May be");
+				txtans_d.sendKeys("Depends on requirements");
+				optn_b.click();
+				Select dl = new Select(difficulty_level);
+				dl.selectByValue("easy");
+				qstn_submitbtn.click();
+			}
+
+			close_modal.click();
+			i++;
+
 		}
+		if (close_modal.isDisplayed()) {
+			close_modal.click();
+
+		}
+
+
+	}
+	
+	public void csvAddquesBtn() throws InterruptedException {
+		add_questionbtn.click();
+		csv_form.click();
+		Select ct  = new Select(csvcat_drpdwn);
+		Select sct  = new Select(csvsubcat_drpdwn);
+		ct.selectByVisibleText("Automation Testing");
+		Thread.sleep(2000);
+		sct.selectByVisibleText("Selenium");
+		csv_upload.sendKeys("C:\\Users\\CODECLOUDS-RITUPARNA\\Desktop\\sample_questions.csv");
+		csv_submitbtn.click();
+		Thread.sleep(2000);
+		close_modal.click();
 		
 	}
+
+
+
+	/* public void closeModal() {
+		close_modal.click();
+
+	} */
 
 	public ExamsPage examMenuRedirect() {
 		exam_url.click();
@@ -146,8 +191,8 @@ public class QuestionsPage extends AbstractMethods{
 		System.out.println("Toast message displayed: " + toastMessage.getText());
 		return  toastMessage.getText();
 	}
-	
-	
+
+
 
 
 
