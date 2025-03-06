@@ -100,6 +100,7 @@ public class DashboardPage extends AbstractMethods{
 	} 
 
 	public UserPage userMenuRedirect() {
+		
 		user_url.click();
 		return new UserPage(driver);
 		

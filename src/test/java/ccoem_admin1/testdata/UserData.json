@@ -3,16 +3,16 @@
     {
       "fname": "David",
       "lname": "Smith",
-      "email": "testing4@gmail.com",
-      "phone": "8244456755",
+      "email": "testing14@gmail.com",
+      "phone": "6544456755",
       "password": "Test@1234",
 	  "role":"2"
     },
     {
       "fname": "John",
       "lname": "Doe",
-      "email": "testing5@gmail.com",
-      "phone": "8388856766",
+      "email": "testing15@gmail.com",
+      "phone": "7588856766",
       "password": "Test@5678",
 	  "role":"2"
     }

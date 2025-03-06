@@ -64,18 +64,33 @@ public class UserPage extends AbstractMethods{
 
 
 	public void VerifyUserAdd(String fname,String lname,String email, String ph,String pass,String role) throws InterruptedException {
-		Thread.sleep(3000);
-		add_user.click();
-		user_fname.sendKeys(fname);
-		user_lname.sendKeys(lname);
-		user_email.sendKeys(email);
-		user_phno.sendKeys(ph);
-		user_pass.sendKeys(pass);
-		Select srole = new Select(user_role);
-		srole.selectByValue(role);
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
-		Thread.sleep(3000);
-		user_submitbtn.click();
+	    // Refresh page to ensure fresh state
+	    System.out.println("Refreshing page before adding user...");
+	    driver.navigate().refresh();
+	    Thread.sleep(3000);  
+
+	    // Click Add User button
+	    System.out.println("Clicking Add User button...");
+	    wait.until(ExpectedConditions.elementToBeClickable(add_user)).click();
+
+	    // Fill user details
+	    System.out.println("Entering user details...");
+	    wait.until(ExpectedConditions.visibilityOf(user_fname)).sendKeys(fname);
+	    wait.until(ExpectedConditions.visibilityOf(user_lname)).sendKeys(lname);
+	    wait.until(ExpectedConditions.visibilityOf(user_email)).sendKeys(email);
+	    wait.until(ExpectedConditions.visibilityOf(user_phno)).sendKeys(ph);
+	    wait.until(ExpectedConditions.visibilityOf(user_pass)).sendKeys(pass);
+
+	    // Select role
+	    System.out.println("Selecting role...");
+	    Select srole = new Select(wait.until(ExpectedConditions.elementToBeClickable(user_role)));
+	    srole.selectByValue(role);
+
+	    // Click Submit
+	    System.out.println("Submitting user...");
+	    wait.until(ExpectedConditions.elementToBeClickable(user_submitbtn)).click();
 
 
 	}
