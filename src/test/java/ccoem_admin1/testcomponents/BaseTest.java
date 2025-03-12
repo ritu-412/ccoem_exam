@@ -20,6 +20,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -86,7 +91,80 @@ public class BaseTest extends SetUp_BS_Config{
     
     
     @BeforeTest
-    public void setUp() throws InterruptedException{
+    public void setUp() throws InterruptedException {
+        // Get platform and browser details from properties file
+        String platformName = properties.getProperty("platform_name");
+        System.out.println("Platform: " + platformName);
+        String browserName = properties.getProperty("browser");
+
+        switch (platformName.toLowerCase()) {
+            case "browserstack":
+                switch (browserName.toLowerCase()) {
+                    case "chrome":
+                        run_Bs_Config();
+                        
+                        driver = BaseTest.driver;
+                        if (driver == null) {  // ✅ Ensure driver is initialized
+                            throw new RuntimeException("BrowserStack driver is still null after initialization.");
+                        }
+                        Thread.sleep(3000); // ❗ Consider replacing with explicit waits
+                        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+                        driver.manage().window().maximize();
+                        driver.get(properties.getProperty("url"));
+                        break;
+                    default:
+                        throw new RuntimeException("BrowserStack configuration not properly done, Please configure first...");
+                }
+                break;
+
+            case "local":
+                switch (browserName.toLowerCase()) {
+                    case "chrome":
+                    case "chromeheadless":
+                        ChromeOptions options = new ChromeOptions();
+                        
+                        // ✅ Use headless mode only if "chromeheadless" is selected
+                        if (browserName.equalsIgnoreCase("chromeheadless")) {  
+                            options.addArguments("--headless");  
+                            options.addArguments("--disable-gpu");  
+                            options.addArguments("--window-size=1920,1080");  
+                            options.addArguments("--disable-extensions");  // Prevents interference  
+                            options.addArguments("--remote-allow-origins=*"); // Avoids CORS issues  
+                        }       
+
+                        driver = new ChromeDriver(options);  // ✅ Always pass ChromeOptions
+                        break;
+                        
+                    case "firefox":
+                        FirefoxOptions firefoxOptions = new FirefoxOptions();
+                        driver = new FirefoxDriver(firefoxOptions);
+                        break;
+                        
+                    case "edge":
+                        EdgeOptions edgeOptions = new EdgeOptions();
+                        driver = new EdgeDriver(edgeOptions);
+                        break;
+
+                    default:
+                        throw new RuntimeException("Invalid browser configuration: " + browserName);
+                }
+
+                // ✅ Common driver setup after initialization
+                if (driver == null) {  // Extra safety check
+                    throw new RuntimeException("Driver initialization failed for " + browserName);
+                }
+
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+                driver.manage().window().maximize();
+                driver.get(properties.getProperty("url"));
+                break;
+
+            default:
+                throw new RuntimeException("Driver not invoked for local or BrowserStack.");
+        }
+    }
+
+   /* public void setUp() throws InterruptedException{
     	//System.out.println("Driver instance at start of setUp(): " + driver);
         String platformName = properties.getProperty("platform_name");
         System.out.println("Platform: " + platformName);
@@ -130,7 +208,9 @@ public class BaseTest extends SetUp_BS_Config{
             default:
                 throw new RuntimeException("Driver not invoked for local or BrowserStack.");
         }
-    }
+    } */
+    
+    
 
    /* public void setUp(){
         String platformName = properties.getProperty("platform_name");
@@ -168,6 +248,9 @@ public class BaseTest extends SetUp_BS_Config{
     @AfterTest
     public void closeBrowser(){
 
-      // driver.quit();
+    	 if (driver != null) {
+             driver.quit();  // Quit browser after all tests (except QuestionsCSVPageTest, which has @AfterClass)
+            
+         }
     }
 }

@@ -5,12 +5,16 @@
 <listener class-name="ccoem_admin1.testcomponents.Listeners" />
 </listeners>
 
-  <test thread-count="5" name="Exam Page test">
+  <test name="QuestionsCSV Test">
     <classes>
-   		 <class name="ccoem_admin1.tests.QuestionsCSVPageTest"/>
-		 <class name="ccoem_admin1.tests.ExamsPageTest"/>
-		  
-	 </classes>
-    </test>
+      <class name="ccoem_admin1.tests.QuestionsCSVPageTest"/>
+    </classes>
+  </test>
+
+  <test name="ExamsPage Test">
+    <classes>
+      <class name="ccoem_admin1.tests.ExamsPageTest"/>
+    </classes>
+  </test>
  
 </suite> <!-- Suite -->

@@ -11,7 +11,6 @@
           <include name="setUp"/>
           <include name="closeBrowser"/>
           <include name="AddsubCatTest"/>
-          <include name="VerifyaddCatgoryTest"/>
         </methods>
       </class> <!-- ccoem_admin1.tests.CategoryPageTest -->
     </classes>

@@ -46,9 +46,9 @@ public class ExamsPageTest extends BaseTest {
 		categorypage = new CategoryPage(driver);
 		questionspage = new QuestionsPage(driver);
 		examspage = new ExamsPage(driver);
-		//landingpage.clickToLogin();
-		//dashboardpage = lognpage.login(email,password);
-		//questionspage = dashboardpage.questionMenuRedirect();
+		landingpage.clickToLogin();
+		dashboardpage = lognpage.login(email,password);
+		questionspage = dashboardpage.questionMenuRedirect();
 		questionspage.clickAddquesBtn();
 		//questionspage.closeModal();	
 	}

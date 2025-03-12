@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="ccoem_admin1.tests.UserPageTest">
+      <class name="ccoem_admin1.tests.ExamsPageTest">
         <methods>
-          <include name="AddUserProfile" invocation-numbers="1"/>
+          <include name="examListTest"/>
+          <include name="addExamTest"/>
           <include name="setUp"/>
           <include name="closeBrowser"/>
+          <include name="addQuestionTest"/>
         </methods>
-      </class> <!-- ccoem_admin1.tests.UserPageTest -->
+      </class> <!-- ccoem_admin1.tests.ExamsPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

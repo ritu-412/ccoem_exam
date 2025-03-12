@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="ccoem_admin1.testcomponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Exam Page test(failed)">
+  <test thread-count="5" name="ExamsPage Test(failed)">
     <classes>
       <class name="ccoem_admin1.tests.ExamsPageTest">
         <methods>
@@ -15,5 +15,5 @@
         </methods>
       </class> <!-- ccoem_admin1.tests.ExamsPageTest -->
     </classes>
-  </test> <!-- Exam Page test(failed) -->
+  </test> <!-- ExamsPage Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
