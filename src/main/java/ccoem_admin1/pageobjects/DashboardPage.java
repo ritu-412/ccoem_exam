@@ -24,6 +24,7 @@ public class DashboardPage extends AbstractMethods{
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		//test comment for git eclipse
 
 	}
 
