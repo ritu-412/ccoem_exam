@@ -4,27 +4,15 @@
   <listeners>
     <listener class-name="ccoem_admin1.testcomponents.Listeners"/>
   </listeners>
-  <test thread-count="5" name="QuestionsCSV Test(failed)">
+  <test thread-count="5" name="Assign user to exams test(failed)">
     <classes>
-      <class name="ccoem_admin1.tests.QuestionsCSVPageTest">
+      <class name="ccoem_admin1.tests.AssignExamPageTest">
         <methods>
+          <include name="assignexamUserTest"/>
           <include name="setUp"/>
           <include name="closeBrowser"/>
-          <include name="Verifyquestions"/>
         </methods>
-      </class> <!-- ccoem_admin1.tests.QuestionsCSVPageTest -->
+      </class> <!-- ccoem_admin1.tests.AssignExamPageTest -->
     </classes>
-  </test> <!-- QuestionsCSV Test(failed) -->
-  <test thread-count="5" name="ExamsPage Test(failed)">
-    <classes>
-      <class name="ccoem_admin1.tests.ExamsPageTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="addExamTest"/>
-          <include name="closeBrowser"/>
-          <include name="addQuestionTest"/>
-        </methods>
-      </class> <!-- ccoem_admin1.tests.ExamsPageTest -->
-    </classes>
-  </test> <!-- ExamsPage Test(failed) -->
+  </test> <!-- Assign user to exams test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

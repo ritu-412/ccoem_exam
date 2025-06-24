@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -104,9 +105,9 @@ public class AssignExamPage extends AbstractMethods{
 		starttime_picker.sendKeys(currentDate);
 		//endtime_picker.click();
 		endtime_picker.sendKeys(currentDate);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		//selectUsersUsingActions(Arrays.asList("Jagriti Sethia", "demo1 test1"));
-		selectUsersUsingActions(Arrays.asList("Arkabrata Chandra", "test demo"));
+		selectUsersUsingActions(Arrays.asList("Admin Arka Chandra", "test25 demo25"));
 		//select_user.click();
 		/*Actions a = new Actions(driver);
 		a.sendKeys(select_user_txt,"jagriti").build().perform();
@@ -123,24 +124,33 @@ public class AssignExamPage extends AbstractMethods{
 
 	public void selectUsersUsingActions(List<String> namesToSelect) throws InterruptedException {
 		Thread.sleep(1000);
-		select_user.click();
+	    select_user.click();
 
-		Actions actions = new Actions(driver);
+	    for (String name : namesToSelect) {
+	        WebElement option = user_options.stream()
+	                .filter(opt -> opt.getText().trim().equals(name)) // Find matching option
+	                .findFirst()
+	                .orElse(null);
 
-		for (String name : namesToSelect) {
-			WebElement option = user_options.stream()
-					.filter(opt -> opt.getText().trim().equals(name)) // Find matching option
-					.findFirst()
-					.orElse(null);
+	        if (option != null) {
+	        	Thread.sleep(300);
+	            // Scroll to the element to bring it into view
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", option);
+	            Thread.sleep(500); // optional wait for scroll to settle
 
-			if (option != null) {
-				actions.moveToElement(option).click().perform();
-				user_2ndoption.click(); // Reopen dropdown for next selection
+	            // Now click the element using JavaScript or Actions
+	            // Option 1: JavaScript click (more reliable)
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", option);
 
-			}
-		}
-		//actions.sendKeys(Keys.ESCAPE).perform();
-		form.click();		
+	            // Option 2: Actions click (if needed)
+	            // new Actions(driver).moveToElement(option).click().perform();
+
+	            Thread.sleep(500); // optional wait after click
+	            user_2ndoption.click(); // reopen dropdown for next selection
+	        }
+	    }
+
+	    form.click();	
 	}
 	
 	

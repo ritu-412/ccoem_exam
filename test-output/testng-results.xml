@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-24T13:27:27 IST" name="Suite" finished-at="2025-06-24T13:27:45 IST" duration-ms="18248">
+  <suite started-at="2025-06-24T20:13:48 IST" name="Suite" finished-at="2025-06-24T20:14:13 IST" duration-ms="25167">
     <groups>
     </groups>
-    <test started-at="2025-06-24T13:27:27 IST" name="Exam Page test" finished-at="2025-06-24T13:27:45 IST" duration-ms="18248">
-      <class name="ccoem_admin1.tests.ResultsPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:ccoem_admin1.tests.ResultsPageTest@b3ca52e]" started-at="2025-06-24T13:27:27 IST" name="setUp" finished-at="2025-06-24T13:27:32 IST" duration-ms="5508" status="PASS">
+    <test started-at="2025-06-24T20:13:48 IST" name="Assign user to exams test" finished-at="2025-06-24T20:14:13 IST" duration-ms="25167">
+      <class name="ccoem_admin1.tests.AssignExamPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:ccoem_admin1.tests.AssignExamPageTest@b3ca52e]" started-at="2025-06-24T20:13:48 IST" name="setUp" finished-at="2025-06-24T20:13:52 IST" duration-ms="3836" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="getResultinfo()[pri:0, instance:ccoem_admin1.tests.ResultsPageTest@b3ca52e]" started-at="2025-06-24T13:27:32 IST" name="getResultinfo" finished-at="2025-06-24T13:27:43 IST" duration-ms="10345" status="PASS">
+        <test-method signature="assignexamUserTest()[pri:0, instance:ccoem_admin1.tests.AssignExamPageTest@b3ca52e]" started-at="2025-06-24T20:13:52 IST" name="assignexamUserTest" finished-at="2025-06-24T20:14:13 IST" duration-ms="20995" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getResultinfo -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ccoem_admin1.tests.ResultsPageTest@b3ca52e]" started-at="2025-06-24T13:27:45 IST" name="closeBrowser" finished-at="2025-06-24T13:27:45 IST" duration-ms="238" status="PASS">
+        </test-method> <!-- assignexamUserTest -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:ccoem_admin1.tests.AssignExamPageTest@b3ca52e]" started-at="2025-06-24T20:14:13 IST" name="closeBrowser" finished-at="2025-06-24T20:14:13 IST" duration-ms="252" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- ccoem_admin1.tests.ResultsPageTest -->
-    </test> <!-- Exam Page test -->
+      </class> <!-- ccoem_admin1.tests.AssignExamPageTest -->
+    </test> <!-- Assign user to exams test -->
   </suite> <!-- Suite -->
 </testng-results>
