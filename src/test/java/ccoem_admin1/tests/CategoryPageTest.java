@@ -48,7 +48,7 @@ public class CategoryPageTest extends BaseTest {
 		categorypage = dashboardpage.catMenuRedirect();
 		categorypage.clickAddcatButton();
 		String actualsuccessmsg = categorypage.addCategory(); //returns actual success msg
-		String expectedsuccessmsg="Category Created Successfully";
+		String expectedsuccessmsg="Category Created Successfully!";
 		//categorypage.addCat();
 		Assert.assertEquals(actualsuccessmsg, expectedsuccessmsg, "Category success message does not match");
 	

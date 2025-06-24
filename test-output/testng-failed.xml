@@ -4,6 +4,17 @@
   <listeners>
     <listener class-name="ccoem_admin1.testcomponents.Listeners"/>
   </listeners>
+  <test thread-count="5" name="QuestionsCSV Test(failed)">
+    <classes>
+      <class name="ccoem_admin1.tests.QuestionsCSVPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="closeBrowser"/>
+          <include name="Verifyquestions"/>
+        </methods>
+      </class> <!-- ccoem_admin1.tests.QuestionsCSVPageTest -->
+    </classes>
+  </test> <!-- QuestionsCSV Test(failed) -->
   <test thread-count="5" name="ExamsPage Test(failed)">
     <classes>
       <class name="ccoem_admin1.tests.ExamsPageTest">

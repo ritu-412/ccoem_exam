@@ -30,45 +30,45 @@ public class CategoryPage extends AbstractMethods{
 	WebElement add_cat;
 
 	@FindBy(xpath="//input[@name='catName']")
-	WebElement catname;
+	private WebElement catname;
 
 
 	@FindBy(xpath="//input[@name='catDescription']")
-	WebElement catdescription;
+	private WebElement catdescription;
 
 	@FindBy(xpath="//button[@type='submit']")
-	WebElement submit_btn;
+	private WebElement submit_btn;
 
 
 	@FindBy(xpath="//ul[@class='list-unstyled']/li[1]")
-	WebElement myprofile;
+	private WebElement myprofile;
 
 	@FindBy(xpath="//div[@role='alert']//div")
-	WebElement profile_successmsg;
+	private WebElement profile_successmsg;
 
 
 	@FindBy(xpath="//div[div[text()='Automation Testing']]/following-sibling::div//button[contains(@class,'btn-edit-in-table')]")
-	WebElement edit_btn;
+	private WebElement edit_btn;
 
 	@FindBy(xpath="//div[@id='title']")
-	WebElement edit_cattitle;
+	private WebElement edit_cattitle;
 
 
 	@FindBy(xpath="//input[@name='catName']")
-	WebElement edt_catname;
+	private WebElement edt_catname;
 
 	@FindBy(xpath="//input[@name='catDescription']")
-	WebElement edt_catdesc;
+	private WebElement edt_catdesc;
 
 	@FindBy(xpath="//button[@type='submit']")
-	WebElement edit_submitbtn;
+	private WebElement edit_submitbtn;
 
 
 	@FindBy(css = "div#row-0 div[data-column-id='1']")
-	WebElement firstRowCategory;
+	private WebElement firstRowCategory;
 	
 	@FindBy(xpath="(//ul[@id='sidebar-list-icons']/div/li/a)[2]")
-	WebElement subcat_url;
+	private WebElement subcat_url;
 
 
 	By edit_success = By.xpath("//div[@role='alert']//div");
